@@ -1,15 +1,14 @@
 package com.project.ecommercebackend.models;
 
 public class Category {
-    private long id;
     private String title;
 
-    public long getId() {
-        return id;
+    public Category() {
+
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Category(String title) {
+        this.title = title;
     }
 
     public String getTitle() {
@@ -19,4 +18,5 @@ public class Category {
     public void setTitle(String title) {
         this.title = title;
     }
+
 }

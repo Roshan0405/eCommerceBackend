@@ -1,7 +1,9 @@
 package com.project.ecommercebackend.models;
 
-public class Product {
-    private long id;
+import jakarta.persistence.Entity;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+@Entity
+public class Product extends BaseModel {
     private String title;
     private String description;
     private double price;
@@ -9,7 +11,6 @@ public class Product {
     private String category;
 
     public Product(long id, String title, String description, double price, String imageUrl, String category) {
-        this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
@@ -17,13 +18,6 @@ public class Product {
         this.category = category;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -63,5 +57,16 @@ public class Product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", category='" + category + '\'' +
+                '}';
     }
 }
