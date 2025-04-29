@@ -1,6 +1,10 @@
 package com.project.ecommercebackend.models;
 
-public class Category {
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Category extends BaseModel {
     private String title;
 
     public Category() {

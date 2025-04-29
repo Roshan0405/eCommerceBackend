@@ -1,21 +1,22 @@
 package com.project.ecommercebackend.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 @Entity
 public class Product extends BaseModel {
-    private Long id;
     private String title;
     private String description;
     private double price;
     private String imageUrl;
-    private String category;
+    @ManyToOne
+    private Category category;
 
     public Product() {
 
     }
 
-    public Product(long id, String title, String description, double price, String imageUrl, String category) {
+    public Product(long id, String title, String description, double price, String imageUrl, Category category) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -56,11 +57,11 @@ public class Product extends BaseModel {
         this.imageUrl = imageUrl;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
