@@ -4,11 +4,16 @@ import jakarta.persistence.Entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 @Entity
 public class Product extends BaseModel {
+    private Long id;
     private String title;
     private String description;
     private double price;
     private String imageUrl;
     private String category;
+
+    public Product() {
+
+    }
 
     public Product(long id, String title, String description, double price, String imageUrl, String category) {
         this.title = title;
